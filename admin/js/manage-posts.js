@@ -9,16 +9,31 @@ async function fetchAllPosts() {
     let postsHTML = ""
 
     for (let post of data){
-        postsHTML += `<li> 
-                        Title: ${post.title} <br> 
-                        Author: ${post.author} <br> 
-                        Date: ${post.date} <br> 
+        postsHTML += `<li> <div> 
+                        <b> Title </b>: ${post.title} <br> 
+                        <b> Author: </b> ${post.author} <br> 
+                        <b> Date: </b> ${post.date} <br> </div>
                         <div class="manage-post" >
-                            <a href="#"> Update </a>
-                            <a href="#"> Delete </a>
+                            <a href="update-post.html"> Update </a>
+                            <a href="#" data-id= ${post._id}> Delete </a>
                         </div>
-                    </li> <br>`
+                    </li>`
     }
 
     document.getElementById("posts-list").innerHTML = postsHTML;
- }
+
+    let deleteLinks = document.querySelectorAll("#posts-list li a:last-child");
+    for (let link of deleteLinks) {
+        link.addEventListener("click", async function (e) {
+            e.preventDefault();
+
+            try{
+                await fetch("http://localhost:5000/posts/"+ e.target.dataset.id, {method: "DELETE"});
+                e.target.parentNode.parentNode.remove();
+            } catch (err){
+                console.log(err);
+            }
+        })
+    }
+}
+
