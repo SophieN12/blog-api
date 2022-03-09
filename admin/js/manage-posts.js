@@ -14,37 +14,43 @@ async function fetchAllPosts() {
             if (post.tags === null || post.tags.length == 0) {
                 postTags = "None";
             } else {
-                postTags = post.tags;
+                postTags = post.tags.join(", ");
             }
-    
-            postsHTML += `<li> <div> 
-                            <b> Title </b>: ${post.title} <br> 
-                            <b> Author: </b> ${post.author} <br> 
-                            <b> Date: </b> ${post.date} <br> 
-                            <b> Tags: </b> ${postTags} <br> </div>
-                            <div class="manage-post" >
-                                <a href="update-post.html"> Update </a>
-                                <a href="#" data-id= ${post._id}> Delete </a>
-                            </div>
-                        </li>`
+
+            postsHTML += `<tr> 
+                            <td> ${post.title} </td> 
+                            <td> ${post.author} </td> 
+                            <td> ${post.date.replace("T", " ").slice(0, 16)} </td>  
+                            <td> ${postTags}</td> 
+                            <td> 
+                                <div class="manage-post" >
+                                    <a href="update-post.html"> Update </a>
+                                    <a href="#" data-id= ${post._id}> Delete </a>
+                                </div>
+                            </td>
+                        </tr>`
         }
     
-        document.getElementById("posts-list").innerHTML = postsHTML;
+        document.querySelector("#posts-table tbody").innerHTML = postsHTML;
     
-        let deleteLinks = document.querySelectorAll("#posts-list li a:last-child");
+        let deleteLinks = document.querySelectorAll(".manage-post a:last-child");
         for (let link of deleteLinks) {
-            link.addEventListener("click", async function (e) {
-                e.preventDefault();
-    
-                try{
-                    await fetch("http://localhost:5000/posts/"+ e.target.dataset.id, {method: "DELETE"});
-                    e.target.parentNode.parentNode.remove();
-                } catch (err){
-                    console.log(err);
-                }
-            })
+            link.addEventListener("click", deletePost);
         }
+        
     } catch(err) {
+        console.log(err);
+    }
+}
+
+async function deletePost(e){
+    e.preventDefault();
+    const clickedLink = e.target;
+    try {
+        await fetch("http://localhost:5000/posts/"+ e.target.dataset.id, {method: "DELETE"});
+        clickedLink.parentNode.parentNode.parentNode.remove();
+
+    } catch (err){
         console.log(err);
     }
 }

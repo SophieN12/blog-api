@@ -1,6 +1,6 @@
 header{
     text-align: end;
-    max-width: 700px;
+    max-width: 850px;
     margin: 20px auto 30px auto;
     padding-bottom: 10px;
     border-bottom: 2px solid grey;
@@ -9,7 +9,6 @@ header{
 header a{
     margin-top: 40px;
     margin-right: 10px;
-    
 }
 
 a{
@@ -19,28 +18,32 @@ a:visited{
     color: blue;
 }
 
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+h1{
+    margin-left: 30px;
+}
+
 #create-new-post-btn{
     display: block;
     text-align: end;
     margin-bottom: 10px;
-    margin-right: 10px;
+    margin-right: 25px;
 }
 
 #create-new-post-btn input{
     padding: 10px;
     border-radius: 10px;
     border-style: none;
-    background-color: lavender;
+    background-color: lavender
 }
 
 #create-new-post-btn input:hover{
     background-color:rgb(188, 193, 238);
-}
-
-.container{
-    max-width: 700px;
-    margin: 0 auto;
-    border-radius: 20px;
 }
 
 #posts-list{
@@ -59,10 +62,25 @@ a:visited{
 }
 
 .manage-post{
-    float: right;
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
     justify-content: center;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+thead{
+    font-weight: bold;
+    font-size: 16px;
+    background-color: lavender;
+}
+
+td{
+    border: 2px solid grey;
+    padding: 15px 20px;
 }
