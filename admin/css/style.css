@@ -28,12 +28,13 @@ a:visited{
 
 #create-new-post-btn input{
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: none;
-    background-color: lightblue;
+    background-color: lavender;
 }
+
 #create-new-post-btn input:hover{
-    background-color:rgb(64, 121, 207);
+    background-color:rgb(188, 193, 238);
 }
 
 .container{
@@ -51,7 +52,7 @@ a:visited{
     border-radius: 20px;
     list-style-type: none;
     padding: 40px;
-    background-color: lightgrey;
+    background-color: lavender;
     margin: 25px 0; 
     display: flex;
     justify-content: space-between;
@@ -63,4 +64,5 @@ a:visited{
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    justify-content: center;
 }
