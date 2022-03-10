@@ -24,7 +24,7 @@ async function fetchAllPosts() {
             }
 
             if (post.content.length > 100) {
-                postContent = post.content.substring(0, 100) + '... <a href="/post.html?id=${post._id}">läs mer</a>'
+                postContent = post.content.substring(0, 100) + '... <a href="/post.html?id=' + post._id + '">läs mer</a>'
             } else {
                 postContent = post.content;
             }
@@ -38,9 +38,8 @@ async function fetchAllPosts() {
 
             </li>
             `
-            
-            // bör man ha en if-sats om blogginlägg har < 100 karaktärer?
-            
+
+
         }
 
         blogPosts.innerHTML = html;
