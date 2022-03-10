@@ -4,8 +4,6 @@ window.onload = function() {
     var selected = '';
     fetchPost(urlParams);
     updatePost(urlParams);
-    
-
 }
 
 async function fetchPost(urlParams) {
@@ -19,8 +17,9 @@ async function fetchPost(urlParams) {
         document.getElementById('title').value = post.title;
         document.getElementById('author').value = post.author;
         document.getElementById('content').innerText = post.content;
-        console.log(post.tags);
-    } catch(error) {
+        fetchTags(post);
+        }     
+    catch(error) {
         console.log(error);
     }
 }
@@ -69,6 +68,14 @@ function updateTagSelections() {
     return selected;
 }
 
-function fetchTags () {
-    console.log(post.tags);
+function fetchTags (post) {
+    for(tag of post.tags) {
+        console.log(tag);
+        for (var option of document.getElementById('tags').options) {
+        
+            if (tag == option.value) {
+                option.selected = 'selected';
+            }
+        }
+    }
 }
