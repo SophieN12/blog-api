@@ -12,20 +12,33 @@ async function fetchAllPosts() {
 
         console.log(posts)
 
-        let html = ''
+        let html = '';
+        let postTags = '';
+        let postContent = '';
+
         for(let post of posts) {
+            if (post.tags === null || post.tags.length === 0) {
+                postTags = "None";
+            } else {
+                postTags = post.tags.join(", ");
+            }
+
+            if (post.content.length > 100) {
+                postContent = post.content.substring(0, 100) + '... <a href="/post.html?id=${post._id}">läs mer</a>'
+            } else {
+                postContent = post.content;
+            }
 
             html += `
             <li class="list-group-item">
             <h2>${post.title}</h2>
             <i>${post.author} | ${post.date}</i>
-            <p><b>tags: </b>${post.tags}</p>
-            <p>${post.content.substring(0, 100)} ... <a href="/post.html?id=${post._id}">läs mer</a></p>
+            <p><b>tags: </b>${postTags}</p>
+            <p>${postContent}</p>
 
             </li>
             `
-
-            // hur separera taggar?
+            
             // bör man ha en if-sats om blogginlägg har < 100 karaktärer?
             
         }
