@@ -1,6 +1,16 @@
+:root{
+     --bg-color: rgb(192, 214, 243);
+     --font-family: arial;
+     --padding: 10px;
+}
+
+*{
+    font-family: var(--font-family)
+}
+
 header{
     text-align: end;
-    max-width: 850px;
+    max-width: 750px;
     margin: 20px auto 30px auto;
     padding-bottom: 10px;
     border-bottom: 2px solid grey;
@@ -14,51 +24,37 @@ header a{
 a{
     text-decoration: none;
 }
+
 a:visited{
     color: blue;
 }
 
 .container{
-    max-width: 900px;
+    max-width: 750px;
     margin: 0 auto;
     border-radius: 20px;
 }
 
 h1{
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 #create-new-post-btn{
     display: block;
     text-align: end;
-    margin-bottom: 10px;
-    margin-right: 25px;
+    margin-bottom: 15px;
+    margin-right: 10px;
 }
 
 #create-new-post-btn input{
     padding: 10px;
     border-radius: 10px;
     border-style: none;
-    background-color: lavender
+    background-color: rgb(214, 227, 243);
 }
 
 #create-new-post-btn input:hover{
-    background-color:rgb(188, 193, 238);
-}
-
-#posts-list{
-    padding-left: 0px;
-    margin-top: 0px;
-}
-
-#posts-list li{
-    border-radius: 20px;
-    list-style-type: none;
-    padding: 40px;
-    background-color: lavender;
-    margin: 25px 0; 
-    display: flex;
-    justify-content: space-between;
+    background-color: var(--bg-color)
 }
 
 .manage-post{
@@ -77,7 +73,7 @@ table{
 thead{
     font-weight: bold;
     font-size: 16px;
-    background-color: lavender;
+    background-color: var(--bg-color);
 }
 
 td{
