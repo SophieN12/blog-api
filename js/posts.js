@@ -1,4 +1,4 @@
-const blogPosts = document.getElementById('blog-posts')
+const blogPosts = document.getElementById('blog-posts');
 
 window.onload = function() {
     fetchAllPosts();
@@ -7,7 +7,7 @@ window.onload = function() {
 async function fetchAllPosts() {
     try {
 
-        const response = await fetch('http://localhost:5000/posts')
+        const response = await fetch('http://localhost:5000/posts');
         const posts = await response.json();
 
         console.log(posts)
@@ -17,13 +17,14 @@ async function fetchAllPosts() {
         let postContent = '';
 
         for(let post of posts) {
+            
             if (post.tags === null || post.tags.length === 0) {
                 postTags = "None";
             } else {
                 postTags = post.tags.join(", ");
             }
 
-            if (post.content.length > 100) {
+            if (post.content && post.content.length > 100) {
                 postContent = post.content.substring(0, 100) + '... <a href="/post.html?id=' + post._id + '">läs mer</a>'
             } else {
                 postContent = post.content;
