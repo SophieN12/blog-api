@@ -4,11 +4,15 @@
      --padding: 10px;
 }
 
-*{
+* {
     font-family: var(--font-family)
 }
 
-header{
+body {
+    background-color: var(--bg-color)
+}
+
+header {
     text-align: end;
     max-width: 750px;
     margin: 20px auto 30px auto;
@@ -16,48 +20,47 @@ header{
     border-bottom: 2px solid grey;
 }
 
-header a{
+header a {
     margin-top: 40px;
     margin-right: 10px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-a:visited{
+a:visited {
     color: blue;
 }
 
-.container{
+.container {
     max-width: 750px;
     margin: 0 auto;
-    border-radius: 20px;
 }
 
-h1{
+h1 {
     margin-left: 10px;
 }
 
-#create-new-post-btn{
+#create-new-post-btn {
     display: block;
     text-align: end;
     margin-bottom: 15px;
     margin-right: 10px;
 }
 
-#create-new-post-btn input{
+#create-new-post-btn input {
     padding: 10px;
     border-radius: 10px;
-    border-style: none;
-    background-color: rgb(214, 227, 243);
+    border-style: solid;
+    background-color: rgb(214, 214, 224);
 }
 
-#create-new-post-btn input:hover{
-    background-color: var(--bg-color)
+#create-new-post-btn input:hover {
+    background-color: rgb(235, 235, 247);
 }
 
-.manage-post{
+.manage-post {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -65,18 +68,19 @@ h1{
     justify-content: center;
 }
 
-table{
+table {
     border-collapse: collapse;
     margin: 0 auto;
+    background-color: white;
 }
 
-thead{
+thead {
     font-weight: bold;
     font-size: 16px;
-    background-color: var(--bg-color);
+    background-color: rgb(214, 214, 224);
 }
 
-td{
+td {
     border: 2px solid grey;
     padding: 15px 20px;
 }
