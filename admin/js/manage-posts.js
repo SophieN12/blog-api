@@ -24,7 +24,7 @@ async function fetchAllPosts() {
                             <td> ${postTags}</td> 
                             <td> 
                                 <div class="manage-post" >
-                                    <a href="update-post.html" data-id= ${post._id}> Update </a>
+                                    <a href="update-post.html?id=${post._id}"> Update </a>
                                     <a href="#" data-id= ${post._id}> Delete </a>
                                 </div>
                             </td>
