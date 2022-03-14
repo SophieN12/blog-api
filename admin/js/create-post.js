@@ -35,7 +35,7 @@ form.addEventListener('submit', async function(e){
             throw new Error('Something went wrong with the API')
         }
 
-        window.location.replace('admin/index.html') //lägger till när jag är klar!
+        window.location.replace('index.html') //lägger till när jag är klar!
 
     } catch(error){
         console.log(error);
