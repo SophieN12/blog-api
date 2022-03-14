@@ -33,3 +33,17 @@ h1 {
     padding-bottom: 25px;
     border-bottom: 1px solid gray;
 }
+
+#post-header{
+    text-align: end;
+    max-width: 750px;
+    margin: 20px auto 30px auto;
+    padding-bottom: 5px;
+    border-bottom: 2px solid grey;
+}
+
+#back-link{
+    margin-top: 50px;
+    display: block;
+    text-align: end;
+}
