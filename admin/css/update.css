@@ -1,17 +1,37 @@
-
-#container {
-    width: 900px;
-    margin: 20px auto;
+* {
+    box-sizing: border-box;
 }
 
-#blog-page-link {
-    margin-left: 90%;
+:root{
+    --bg-color: rgb(192, 214, 243);
+    --font-family: arial;
+    --padding: 10px;
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    max-width: 500px;
+}
+
+#blog-link-container {
+    text-align: right;
+}
+
+#back-link {
+    text-align: center;
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: var(--padding);
     margin-top: 5px;
 }
 

@@ -18,7 +18,7 @@ async function fetchPost(urlParams) {
         document.getElementById('author').value = post.author;
         document.getElementById('content').innerText = post.content;
         fetchTags(post);
-        }     
+        }
     catch(error) {
         console.log(error);
     }
