@@ -17,6 +17,24 @@ body{
     justify-content: center;
     align-items: center;
 }
+header {
+    text-align: end;
+    max-width: 750px;
+    margin: 20px auto 30px auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+header a {
+    margin-left: 370px;
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: blue;
+}
 .container{
     max-width: 500px;
 }
