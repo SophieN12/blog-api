@@ -17,9 +17,10 @@ a {
 }
 
 #nav {
-    text-align: right;
-    padding: 5px;
-    border-bottom: 1px solid gray;
+    text-align: end;
+    margin: 20px auto 30px auto;
+    padding-bottom: 10px;
+    border-bottom: 2px solid grey;
 }
 
 h1 {
